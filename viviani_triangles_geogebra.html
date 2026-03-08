@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>משפט ויויאני במשולשים — יחידת לימוד אינטראקטיבית</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="hero"><div class="hero-inner">
+  <h1>משפט ויויאני <span>במשולשים</span></h1>
+  <div class="sub">שווה צלעות · שווה שוקיים · כללי — יחידת לימוד אינטראקטיבית לשנה א׳</div>
+</div></div>
+
+<!-- ═══ TABS ═══ -->
+<div class="tabs"><div class="tabs-inner" id="tabs">
+  <button class="tab active" data-i="0" data-c="eq">△ שווה צלעות</button>
+  <button class="tab" data-i="1" data-c="iso">△ שווה שוקיים</button>
+  <button class="tab" data-i="2" data-c="gen">△ כללי</button>
+  <button class="tab" data-i="3" data-c="eq">🔬 מבחן 3 נקודות</button>
+  <button class="tab" data-i="4" data-c="quiz">✓✗ בוחן</button>
+  <button class="tab" data-i="5" data-c="extra">✦ תרגול</button>
+</div></div>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+
+<!-- ══════════ SECTION 0: EQUILATERAL ══════════ -->
+<div class="section active" id="s0">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--eq-dim);color:var(--eq)">1</div>
+    <h2>משולש שווה צלעות — משפט ויויאני</h2>
+  </div>
+  <div class="theorem-box eq">
+    <strong>משפט ויויאני:</strong> סכום המרחקים מצלעות משולש שווה צלעות של כל נקודה פנימית הוא <strong>קבוע</strong>, ושווה לגובה H של המשולש.
+  </div>
+  <p class="desc">גררו את הנקודה <strong style="color:var(--err)">P</strong> בתוך המשולש. שימו לב שהסכום <strong>לא משתנה</strong> — לא משנה לאן תזיזו!</p>
+  <div class="ggb-wrap"><div id="ggb_eq"></div></div>
+  <div class="stats" id="statsEq"></div>
+  <div class="theorem-box ok" style="font-size:13px">
+    💡 <strong>למה זה עובד?</strong> חברו P ל-A, B, C — נוצרים 3 משולשים. סכום שטחיהם = שטח המשולש המקורי:
+    <div class="math">½·a·h₁ + ½·a·h₂ + ½·a·h₃ = ½·a·H</div>
+    מצמצמים ב-½a ומקבלים: <strong style="color:var(--text)">h₁ + h₂ + h₃ = H</strong>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 1: ISOSCELES ══════════ -->
+<div class="section" id="s1">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--iso-dim);color:var(--iso)">2</div>
+    <h2>משולש שווה שוקיים — מה משתנה?</h2>
+  </div>
+  <div class="theorem-box iso">
+    <strong>שאלה מפתח:</strong> האם משפט ויויאני מתקיים גם במשולש שווה שוקיים שאינו שווה צלעות?<br>
+    <strong>תשובה:</strong> לא! הסכום <strong>משתנה</strong> כשמזיזים את P, אבל הוא <strong>קבוע על ישרים מקבילים</strong>.
+  </div>
+  <p class="desc">משולש שווה שוקיים: בסיס 6, גובה 4 — קודקודים A(−3,0), B(3,0), C(0,4).<br>גררו את P וצפו: הסכום <strong>כבר לא קבוע!</strong></p>
+  <div class="ggb-wrap"><div id="ggb_iso"></div></div>
+  <div class="stats" id="statsIso"></div>
+  <div class="theorem-box warn" style="font-size:13px">
+    ⚡ <strong>מדוע הסכום משתנה?</strong> צלעות המשולש באורכים שונים (6, 5, 5), לכן פונקציית סכום המרחקים V(x,y) = αx + βy + γ עם α ≠ 0 או β ≠ 0. הסכום קבוע רק על קווי גובה — ישרים מקבילים בכיוון מסוים.
+  </div>
+  <div class="theorem-box iso" style="font-size:13px">
+    🪞 <strong>סימטריית שיקוף:</strong> למשולש שווה שוקיים ציר סימטריה (ציר y). לפי המסקנה: אין CVS, אבל קווי הגובה <strong>מנוצבים לציר הסימטריה</strong> — כלומר הם אופקיים!
+  </div>
+</div>
+
+<!-- ══════════ SECTION 2: GENERAL ══════════ -->
+<div class="section" id="s2">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--gen-dim);color:var(--gen)">3</div>
+    <h2>משולש כללי — חישוב פונקציית סכום המרחקים וקווי גובה</h2>
+  </div>
+  <div class="theorem-box gen">
+    <strong>משפט 1:</strong> לכל משולש, פונקציית סכום המרחקים V(x,y) היא <strong>פונקציה לינארית</strong>. התנאים הבאים שקולים:<br>
+    א. למשולש יש CVS &nbsp;⟺&nbsp; ב. V שווה ב-3 נקודות לא קולינאריות &nbsp;⟺&nbsp; ג. המשולש שווה צלעות.
+  </div>
+  <p class="desc">משולש כללי: A(0,0), B(5,0), C(1,4). גררו P — צפו בסכום ובקווי הגובה.</p>
+  <div class="ggb-wrap"><div id="ggb_gen"></div></div>
+  <div class="stats" id="statsGen"></div>
+  <div class="btn-group">
+    <button class="btn btn-gen" id="genShowCalc">הצג חישוב V(x,y)</button>
+  </div>
+  <div id="genCalc" class="hidden">
+    <div class="card" style="line-height:1.9;font-size:14px">
+      <strong>משוואות הצלעות:</strong>
+      <div style="font-family:var(--mono);font-size:13px;color:var(--text2);margin:6px 0;direction:ltr;text-align:left">
+        AB: y = 0 → h₁ = y<br>
+        BC: 4x + 4y − 20 = 0 → h₂ = (20 − 4x − 4y) / √32<br>
+        CA: 4x − y = 0 → h₃ = (4x − y) / √17
+      </div>
+      <strong>סכום:</strong>
+      <div class="math" style="color:var(--gen)">V(x,y) = y + (20−4x−4y)/√32 + (4x−y)/√17</div>
+      <strong>פישוט:</strong>
+      <div class="math" style="color:var(--gen)">V(x,y) = (−4/√32 + 4/√17)x + (1 − 4/√32 − 1/√17)y + 20/√32</div>
+      <div style="color:var(--text2);font-size:13px;margin-top:6px">
+        המקדמים ≠ 0 → <strong style="color:var(--err)">אין CVS</strong>. צלעות: 5, √32 ≈ 5.66, √17 ≈ 4.12 — לא שווה צלעות.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 3: THREE-POINT TEST ══════════ -->
+<div class="section" id="s3">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--eq-dim);color:var(--eq)">4</div>
+    <h2>מבחן שלוש הנקודות — כלי אבחון</h2>
+  </div>
+  <div class="theorem-box eq">
+    <strong>כלל הזהב:</strong> אם V שווה בשלוש נקודות פנימיות:<br>
+    • <strong>לא קולינאריות</strong> → CVS → המשולש <strong>שווה צלעות</strong><br>
+    • <strong>קולינאריות</strong> → הן על אותו קו גובה, <strong>אי אפשר להסיק CVS</strong>
+  </div>
+  <p class="desc">הזינו שלוש נקודות ובדקו: האם הן קולינאריות? מה המסקנה?</p>
+  <div class="card">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+      <div><label style="font-size:12px;color:var(--text2)">נקודה A</label><div style="display:flex;gap:4px;margin-top:4px"><input id="p1x" type="number" value="1" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"><input id="p1y" type="number" value="1" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"></div></div>
+      <div><label style="font-size:12px;color:var(--text2)">נקודה B</label><div style="display:flex;gap:4px;margin-top:4px"><input id="p2x" type="number" value="0" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"><input id="p2y" type="number" value="-2" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"></div></div>
+      <div><label style="font-size:12px;color:var(--text2)">נקודה C</label><div style="display:flex;gap:4px;margin-top:4px"><input id="p3x" type="number" value="2" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"><input id="p3y" type="number" value="3" step="0.5" style="width:60px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 8px;color:var(--text);font-family:var(--mono);font-size:13px;text-align:center"></div></div>
+    </div>
+    <button class="btn btn-eq" id="checkColBtn" style="width:100%">בדוק קולינאריות ← מה המסקנה?</button>
+    <div id="colResult" style="margin-top:14px"></div>
+  </div>
+  <div class="card" style="margin-top:8px">
+    <div style="font-size:14px;font-weight:600;margin-bottom:10px">דוגמאות מהירות — לחצו לטעינה:</div>
+    <div class="btn-group">
+      <button class="btn btn-ghost preset-btn" data-pts="1,1,0,-2,0.333,-1">קולינאריות (מהמטלה)</button>
+      <button class="btn btn-ghost preset-btn" data-pts="-2,0,0.5,0.333,2,0">לא קולינאריות (מהמטלה)</button>
+      <button class="btn btn-ghost preset-btn" data-pts="1,0,0,1,2,2">לא קולינאריות</button>
+      <button class="btn btn-ghost preset-btn" data-pts="0,0,1,2,2,4">קולינאריות (y=2x)</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 4: QUIZ ══════════ -->
+<div class="section" id="s4">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--ok-dim);color:var(--ok)">5</div>
+    <h2>בוחן — נכון/לא נכון ורב-ברירה</h2>
+  </div>
+  <div style="font-size:15px;font-weight:600;color:var(--ok);margin-bottom:12px">חלק א: נכון / לא נכון</div>
+  <div id="tfQuiz"></div>
+  <div id="tfScore" class="hidden"></div>
+  <div style="font-size:15px;font-weight:600;color:var(--eq);margin:24px 0 12px">חלק ב: רב-ברירה</div>
+  <div id="mcQuiz"></div>
+  <div id="mcScore" class="hidden"></div>
+</div>
+
+<!-- ══════════ SECTION 5: PRACTICE ══════════ -->
+<div class="section" id="s5">
+  <div class="sec-head">
+    <div class="sec-badge" style="background:var(--warn-dim);color:var(--warn)">6</div>
+    <h2>תרגילים לתרגול עצמי</h2>
+  </div>
+  <p class="desc">ארבעה תרגילים חדשים — ברמת קושי דומה למטלה. לחצו על שם התרגיל, ואז על "הצג פתרון" לאחר שניסיתם.</p>
+  <div class="btn-group" id="pracSteps"></div>
+  <div id="pracContent"></div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn">→ הקודם</button>
+  <button class="nav-btn next" id="nextBtn">הבא ←</button>
+</div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
