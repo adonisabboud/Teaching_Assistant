@@ -101,5 +101,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);direction:rt
 .fb-err{background:var(--warn-dim);border:1px solid rgba(255,167,38,0.25);color:var(--warn)}
 .score-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;margin-top:20px}
 
+/* Language Switcher */
+.lang-switcher{display:flex;gap:6px;margin-bottom:14px}
+.lang-btn{background:var(--surface);color:var(--text3);border:1px solid var(--border);border-radius:8px;padding:5px 14px;cursor:pointer;font-size:13px;font-family:var(--sans);transition:all 0.2s;font-weight:500}
+.lang-btn:hover{color:var(--text2);border-color:var(--text3)}
+.lang-btn.active{background:var(--eq-dim);color:var(--eq);border-color:rgba(79,195,247,0.4);font-weight:600}
+
+/* LTR support */
+html[dir="ltr"] .theorem-box{border-right:none;border-left:4px solid}
+html[dir="ltr"] .theorem-box.eq{border-left-color:var(--eq)}
+html[dir="ltr"] .theorem-box.iso{border-left-color:var(--iso)}
+html[dir="ltr"] .theorem-box.gen{border-left-color:var(--gen)}
+html[dir="ltr"] .theorem-box.ok{border-left-color:var(--ok)}
+html[dir="ltr"] .theorem-box.warn{border-left-color:var(--warn)}
+html[dir="ltr"] .theorem-box.err{border-left-color:var(--err)}
+html[dir="ltr"] .mc-opt{text-align:left}
+
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .section.active{animation:fadeIn 0.3s ease}
